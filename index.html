@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CS2 League: Season 1</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Inter',sans-serif;
+  background:#0a0a0a;
+  color:#f1f1f1;
+  overflow-x:hidden;
+}
+
+header{
+  background:linear-gradient(180deg,#120000,#000);
+  padding:80px 20px;
+  text-align:center;
+  border-bottom:2px solid #ff0000;
+}
+
+h1{
+  font-family:'Orbitron',sans-serif;
+  font-size:48px;
+  color:#ff0000;
+  text-shadow:0 0 20px #ff0000;
+}
+
+.subtitle{margin-top:10px;color:#aaa;}
+#countdown{margin-top:30px;font-size:22px;font-weight:600;color:#ff4d4d;}
+
+nav{text-align:center;padding:15px;background:#111;border-bottom:1px solid #ff0000;}
+nav a{color:#fff;margin:0 15px;text-decoration:none;font-weight:600;transition:.3s;}
+nav a:hover{color:#ff0000;}
+
+section{
+  padding:70px 20px;
+  max-width:1200px;
+  margin:auto;
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+section.visible{opacity:1;transform:translateY(0);}
+
+h2{font-family:'Orbitron',sans-serif;color:#ff0000;margin-bottom:25px;}
+
+table{width:100%;border-collapse:collapse;}
+th,td{padding:10px;border-bottom:1px solid #333;text-align:left;}
+th{color:#ff0000;}
+tr{cursor:pointer;transition:.2s;}
+tr:hover{background:#1a0000;}
+
+.card{background:#111;padding:20px;margin-bottom:20px;border:1px solid #ff0000;transition:.3s;}
+.card:hover{transform:scale(1.02);}
+
+footer{text-align:center;padding:30px;background:#000;border-top:2px solid #ff0000;font-size:14px;}
+a.telegram{color:#ff0000;text-decoration:none;font-weight:600;}
+
+@media(max-width:700px){h1{font-size:32px}}
+
+/* ===== МОДАЛЬНЕ ВІКНО ===== */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  animation:fadeIn .3s ease;
+}
+
+.modal-content{
+  background:#111;
+  padding:35px;
+  border:2px solid #ff0000;
+  max-width:500px;
+  width:90%;
+  text-align:center;
+  position:relative;
+  animation:scaleIn .3s ease;
+}
+
+.modal-content h3{
+  color:#ff0000;
+  margin-bottom:20px;
+}
+
+.close-btn{
+  position:absolute;
+  top:10px;
+  right:15px;
+  cursor:pointer;
+  font-size:20px;
+}
+
+@keyframes fadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+@keyframes scaleIn{
+  from{transform:scale(.8)}
+  to{transform:scale(1)}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>CS2 League: Season 1</h1>
+<p class="subtitle">EU Online Competitive League</p>
+<div id="countdown"></div>
+</header>
+
+<nav>
+<a href="#about">Про лігу</a>
+<a href="#format">Формат</a>
+<a href="#teams">Команди</a>
+<a href="#standings">Таблиця</a>
+<a href="#playoff">Плей-офф</a>
+<a href="#contact">Контакти</a>
+</nav>
+
+<section id="about">
+<h2>Про турнір</h2>
+<p>CS2 League: Season 1 — престижний статусний онлайн-турнір для команд EU регіону.
+Грошового фонду немає. Переможець отримує офіційний титул чемпіона сезону.</p>
+<p>Старт: 16.02.2026</p>
+<p>Платформа: xplay.gg</p>
+</section>
+
+<section id="format">
+<h2>Формат</h2>
+<div class="card">
+<h3>Груповий етап</h3>
+<p>Round Robin BO2</p>
+<p>Перемога — 3 очки</p>
+<p>Нічия — 1 очко</p>
+<p>Поразка — 0 очок</p>
+<p>Овертайм — дозволений</p>
+</div>
+
+<div class="card">
+<h3>Плей-офф (ТОП-8)</h3>
+<p>Single Elimination</p>
+<p>BO3</p>
+<p>Переможець — Чемпіон CS2 League: Season 1</p>
+</div>
+
+<div class="card">
+<h3>Кубок Престижу (4 команди)</h3>
+<p>Півфінал + фінал</p>
+<p>BO3</p>
+<p>Переможець — Чемпіон Кубку Престижу</p>
+</div>
+</section>
+
+<section id="teams">
+<h2>Команди</h2>
+<p>
+Imperium eSports 🇺🇦<br>
+Rynix eSports 🇺🇦<br>
+Rynix Academy 🇺🇦<br>
+cocksuck 🇺🇦<br>
+SCD 🇺🇦<br>
+IRONFIVE 🇺🇦<br>
+Silvers Academy 🇷🇺<br>
+Luxury_Team<br>
+Luxury_Team Academy<br>
+Eclipse 🇺🇦<br>
+Mopsiki team 🇺🇦<br>
+BRATIKI
+</p>
+</section>
+
+<section id="standings">
+<h2>Турнірна таблиця</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Команда</th>
+<th>І</th>
+<th>В</th>
+<th>Н</th>
+<th>П</th>
+<th>Очки</th>
+</tr>
+</thead>
+<tbody id="tableBody"></tbody>
+</table>
+</section>
+
+<section id="playoff">
+<h2>Плей-офф структура</h2>
+<p>ТОП-8 команд → чвертьфінали → півфінали → фінал.</p>
+<p>Команди 9-12 місця → півфінал Кубку Престижу → фінал.</p>
+</section>
+
+<section id="contact">
+<h2>Контакти</h2>
+<p>Telegram: <a class="telegram" href="https://t.me/RynixandUKR" target="_blank">RynixandUKR</a></p>
+</section>
+
+<footer>
+© 2026 CS2 League: Season 1 | EU Online League
+</footer>
+
+<!-- МОДАЛЬНЕ ВІКНО -->
+<div class="modal" id="teamModal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">✖</span>
+    <h3 id="modalTeamName"></h3>
+    <p id="modalRoster"></p>
+    <p id="modalBench"></p>
+  </div>
+</div>
+
+<script>
+const targetDate = new Date("Feb 14, 2026 16:00:00").getTime();
+const countdown = document.getElementById("countdown");
+
+setInterval(function(){
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+
+  const days = Math.floor(distance / (1000*60*60*24));
+  const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+  const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+  const seconds = Math.floor((distance % (1000*60)) / 1000);
+
+  countdown.innerHTML = "До старту: " + days + "д " + hours + "г " + minutes + "хв " + seconds + "с";
+}, 1000);
+
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll", ()=>{
+  sections.forEach(sec=>{
+    if(sec.getBoundingClientRect().top < window.innerHeight - 100){
+      sec.classList.add("visible");
+    }
+  });
+});
+
+/* ===== ДАНІ КОМАНД ===== */
+
+const teamsData = [
+{name:"Imperium eSports", roster:"NAYMES, Kub1kus, exce1lent, Hanzoku, danggeR1", bench:"Vladusya, hron1k", wins:0,draws:0,losses:0},
+{name:"Rynix eSports", roster:"Cobra_, ITACHI, mar1nt0w, DUBAS_1, FireStone", bench:"Klizma, SUPRISEMOTHERFUCKER", wins:0,draws:0,losses:0},
+{name:"Rynix Academy", roster:"Frenix, Fragtys, Yu0rop, kiperok9090, NEXUS", bench:"bogdandryniv, Jostar, Kise, Ryota", wins:0,draws:0,losses:0},
+{name:"cocksuck", roster:"vladBiceps, J҉O҉K҉E҉R҉, ☬KING, s1rewerstd, 自取灭亡的猛男, Хочу чай(", bench:"Попкошенко", wins:0,draws:0,losses:0},
+{name:"SCD", roster:"Склад ще не надано", bench:"—", wins:0,draws:0,losses:0},
+{name:"IRONFIVE", roster:"Склад ще не надано", bench:"—", wins:0,draws:0,losses:0},
+{name:"Silvers Academy", roster:"ByShine, VkidGames, Fantabym, Zorv1x, Rix", bench:"gili3cs", wins:0,draws:0,losses:0},
+{name:"Luxury_Team", roster:"miDoww, Jame mentality, Лев228, sk?bob, Zont1x mentality", bench:"molodoy", wins:0,draws:0,losses:0},
+{name:"Luxury_Team Academy", roster:"wrap1, LanDi1111, BEMO, molodoy, badabum", bench:"depre??ed, Yung Trappa, Sp1chka, RaZLUKa", wins:0,draws:0,losses:0},
+{name:"Eclipse", roster:"nkl-, sulapwk, Nanya, squizzy, ромчик королевский", bench:"Defrik, Joqqa, Pavlik", wins:0,draws:0,losses:0},
+{name:"Mopsiki team", roster:"payalnikk, voloda, whole666, xhaoru, D'hole", bench:"Yurikk, Saturn", wins:0,draws:0,losses:0},
+{name:"BRATIKI", roster:"Torontokiev, Ralf, Notlokal, Markill, M0008КК", bench:"Makosh, Molodoy", wins:0,draws:0,losses:0}
+];
+
+function renderTable(){
+  const tableBody = document.getElementById("tableBody");
+  tableBody.innerHTML="";
+
+  teamsData.forEach(team=>{
+    team.played = team.wins + team.draws + team.losses;
+    team.points = team.wins*3 + team.draws;
+  });
+
+  teamsData.sort((a,b)=> b.points - a.points);
+
+  teamsData.forEach((team,index)=>{
+    tableBody.innerHTML += `
+      <tr onclick="openTeam('${team.name.replace(/'/g,"\\'")}')">
+        <td>${index+1}</td>
+        <td>${team.name}</td>
+        <td>${team.played}</td>
+        <td>${team.wins}</td>
+        <td>${team.draws}</td>
+        <td>${team.losses}</td>
+        <td>${team.points}</td>
+      </tr>
+    `;
+  });
+}
+
+function openTeam(name){
+  const team = teamsData.find(t=>t.name===name);
+  document.getElementById("modalTeamName").innerText = team.name;
+  document.getElementById("modalRoster").innerHTML = "<strong>Основний склад:</strong><br>"+team.roster;
+  document.getElementById("modalBench").innerHTML = "<strong>Bench:</strong><br>"+team.bench;
+  document.getElementById("teamModal").style.display="flex";
+}
+
+function closeModal(){
+  document.getElementById("teamModal").style.display="none";
+}
+
+document.getElementById("teamModal").addEventListener("click",function(e){
+  if(e.target===this){closeModal();}
+});
+
+renderTable();
+</script>
+
+</body>
+</html>
+
